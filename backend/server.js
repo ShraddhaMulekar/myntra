@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
+import { connectDb } from "./config/connectDb.js"
 dotenv.config()
 
 const app = express()
@@ -13,6 +14,7 @@ app.get("/", (req, res)=>{
     res.send("Myntra Clone Backend Server is Running")
 })
 
-app.listen(port, ()=>{
+app.listen(port, async ()=>{
+    await connectDb()
     console.log(`server started on http://localhost:${port}`)
 })
