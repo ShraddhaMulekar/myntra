@@ -1,11 +1,13 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
+import Register from './pages/Register'
 
 function App() {
 
   return (
-    <>
-      <h1>Myntra Clone</h1>
-    </>
+    <Routes>
+      <Route path='/register' element={<Register />} />
+    </Routes>
   )
 }
 

@@ -18,7 +18,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+
       const res = await fetch(`${api}/auth/register`, {
         method: "POST",
         headers: {
@@ -27,10 +27,7 @@ const Register = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
-    } catch (error) {
-      console.log({ error });
-    }
+      alert(data.message);
   };
 
   return (
