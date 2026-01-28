@@ -11,7 +11,9 @@ export const registerPage = async (req, res)=>{
     try {
         const existingUser = await UserModel.findOne({email})
 
-        if(existingUser){
+        if(existingUser.role === "admin"){
+            return res.status(409).json({message: "Admin already exists"})
+        } else if(existingUser){
             return res.status(409).json({message: "User already exists"})
         }
 
