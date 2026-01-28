@@ -1,7 +1,6 @@
 import express from "express"
+import { registerPage } from "../pages/register.page.js"
 
 export const authRouter = express.Router()
 
-authRouter.get("/", (req, res)=>{
-    res.send("Auth Route is Working")
-})
+authRouter.get("/", registerPage)
