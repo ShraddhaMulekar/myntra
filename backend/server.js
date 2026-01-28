@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import { connectDb } from "./config/connectDb.js"
+import { authRouter } from "./controllers/auth.controller.js"
 dotenv.config()
 
 const app = express()
@@ -10,9 +11,7 @@ const port = process.env.PORT || 5000
 app.use(cors())
 app.use(express.json())
 
-app.get("/", (req, res)=>{
-    res.send("Myntra Clone Backend Server is Running")
-})
+app.use("/auth", authRouter)
 
 app.listen(port, async ()=>{
     await connectDb()
