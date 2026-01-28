@@ -3,4 +3,4 @@ import { registerPage } from "../pages/register.page.js"
 
 export const authRouter = express.Router()
 
-authRouter.get("/", registerPage)
+authRouter.post("/register", registerPage)
