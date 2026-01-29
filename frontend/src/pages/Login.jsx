@@ -1,29 +1,26 @@
-import React, { useState } from "react";
-import { api } from "../api/api";
-import "../css/register.css";
+import React from "react";
 import { useAuthForm } from "../hooks/useAuthForm";
 import { AuthForm } from "../components/AuthForm";
 import { Link } from "react-router-dom";
 
-const Register = () => {
+export const Login = () => {
   const { formData, handleChange, handleSubmit } = useAuthForm({
-    endpoint: "/auth/register",
-    redirectTo: "/login",
+    endpoint: "/auth/login",
+    redirectTo: "/register",
   });
-
   return (
     <div className="register">
       <AuthForm
-        title="Welcome! Register your account."
+        title="Welcome! Login to your account."
         formData={formData}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        showName={true}
-        showRole={true}
-        buttonText="Sign Up"
+        showName={false}
+        showRole={false}
+        buttonText="Log in"
         switchAccount={
           <>
-            Already have an account? <Link to="/login">Log in</Link>
+            Create new account? <Link to="/register">Sign up</Link>
           </>
         }
       />
@@ -31,4 +28,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
