@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import { connectDb } from "./config/connectDb.js"
-import { authRouter } from "./controllers/auth.controller.js"
+import { authRouter } from "./routes/auth/auth.route.js"
 dotenv.config()
 
 const app = express()
