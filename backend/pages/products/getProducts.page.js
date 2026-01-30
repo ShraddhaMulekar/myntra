@@ -20,7 +20,7 @@ export const getProducts = async (req, res) => {
     }
 
     const product = await ProductModel.find(filter);
-    return res.status(200).json({ message: "filter products!", product });
+    return res.status(200).json({ message: "check all product list!", product });
   } catch (error) {
     return res
       .status(500)
