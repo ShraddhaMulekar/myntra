@@ -1,8 +1,10 @@
 import express from "express"
 import { getProducts } from "../../pages/products/getProducts.page.js"
 import { getProductById } from "../../pages/products/getProductById.page.js"
+import { createProduct } from "../../pages/products/createProduct.page.js"
 
 export const productRouter = express.Router()
 
-productRouter.get("/", getProducts)         // GET /products/
-productRouter.get("/:id", getProductById)   // GET /products/:id
+productRouter.get("/", getProducts)             // GET /products/
+productRouter.get("/:id", getProductById)       // GET /products/:id
+productRouter.post("/create", createProduct)    // POST /products/create
