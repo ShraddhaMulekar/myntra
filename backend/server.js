@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import { connectDb } from "./config/connectDb.js"
 import { authRouter } from "./routes/auth/auth.route.js"
+import { productRouter } from "./routes/product/product.route.js"
 dotenv.config()
 
 const app = express()
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/auth", authRouter)
+app.use("/product", productRouter)
 
 app.listen(port, async ()=>{
     await connectDb()

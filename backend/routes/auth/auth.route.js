@@ -1,6 +1,6 @@
 import express from "express"
-import { registerPage } from "../../pages/register.page.js"
-import { loginPage } from "../../pages/login.page.js"
+import { registerPage } from "../../pages/auth/register.page.js"
+import { loginPage } from "../../pages/auth/login.page.js"
 
 export const authRouter = express.Router()
 
