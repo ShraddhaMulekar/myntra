@@ -10,4 +10,4 @@ export const productRouter = express.Router()
 productRouter.get("/", getProducts)                              // GET /products/
 productRouter.get("/:id", getProductById)                        // GET /products/:id
 productRouter.post("/create", adminMiddleware, createProduct)    // POST /products/create
-productRouter.put("/update", adminMiddleware, updateProduct)     // PUT /products/update
+productRouter.put("/update/:id", adminMiddleware, updateProduct)     // PUT /products/update
